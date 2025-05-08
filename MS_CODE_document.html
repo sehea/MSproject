@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.353">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Shuhai Wen">
+
+<title>MS_CODE_document</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="MS_CODE_document_files/libs/clipboard/clipboard.min.js"></script>
+<script src="MS_CODE_document_files/libs/quarto-html/quarto.js"></script>
+<script src="MS_CODE_document_files/libs/quarto-html/popper.min.js"></script>
+<script src="MS_CODE_document_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="MS_CODE_document_files/libs/quarto-html/anchor.min.js"></script>
+<link href="MS_CODE_document_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="MS_CODE_document_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="MS_CODE_document_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="MS_CODE_document_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="MS_CODE_document_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">MS_CODE_document</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Shuhai Wen </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="quarto" class="level2">
+<h2 class="anchored" data-anchor-id="quarto">Quarto</h2>
+<p>Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <a href="https://quarto.org" class="uri">https://quarto.org</a>.</p>
+</section>
+<section id="running-code" class="level2">
+<h2 class="anchored" data-anchor-id="running-code">Running Code</h2>
+</section>
+<section id="load-packages" class="level1">
+<h1>### load packages</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'janitor'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:stats':
+
+    chisq.test, fisher.test</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ ggplot2   3.5.1     ✔ tibble    3.2.1
+✔ lubridate 1.9.3     ✔ tidyr     1.3.1
+✔ purrr     1.0.2     </code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MuMIn)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggpmisc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: ggpp
+Registered S3 methods overwritten by 'ggpp':
+  method                  from   
+  heightDetails.titleGrob ggplot2
+  widthDetails.titleGrob  ggplot2
+
+Attaching package: 'ggpp'
+
+The following object is masked from 'package:ggplot2':
+
+    annotate</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reshape2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'reshape2'
+
+The following object is masked from 'package:tidyr':
+
+    smiths</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(relaimpo)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: MASS
+
+Attaching package: 'MASS'
+
+The following object is masked from 'package:dplyr':
+
+    select
+
+Loading required package: boot
+Loading required package: survey
+Loading required package: grid
+Loading required package: Matrix
+
+Attaching package: 'Matrix'
+
+The following objects are masked from 'package:tidyr':
+
+    expand, pack, unpack
+
+Loading required package: survival
+
+Attaching package: 'survival'
+
+The following object is masked from 'package:boot':
+
+    aml
+
+
+Attaching package: 'survey'
+
+The following object is masked from 'package:graphics':
+
+    dotchart
+
+Loading required package: mitools
+This is the global version of package relaimpo.
+
+If you are a non-US user, a version with the interesting additional metric pmvd is available
+
+from Ulrike Groempings web site at prof.beuth-hochschule.de/groemping.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MASS)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(simpleboot)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Simple Bootstrap Routines (1.1-8)</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(corrplot)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>corrplot 0.95 loaded</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lmerTest)<span class="co">#</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: lme4</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in check_dep_version(): ABI version mismatch: 
+lme4 was built with Matrix ABI version 1
+Current Matrix ABI version is 2
+Please re-install lme4 from source or restore original 'Matrix' package</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'lmerTest'
+
+The following object is masked from 'package:lme4':
+
+    lmer
+
+The following object is masked from 'package:stats':
+
+    step</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Matrix)<span class="co">#</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lme4)</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(emmeans)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Welcome to emmeans.
+Caution: You lose important information if you filter this package's results.
+See '? untidy'</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gvlma)</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MASS)</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(caret)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: lattice
+
+Attaching package: 'lattice'
+
+The following object is masked from 'package:boot':
+
+    melanoma
+
+
+Attaching package: 'caret'
+
+The following object is masked from 'package:survival':
+
+    cluster
+
+The following object is masked from 'package:purrr':
+
+    lift</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(car)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: carData
+
+Attaching package: 'car'
+
+The following object is masked from 'package:boot':
+
+    logit
+
+The following object is masked from 'package:dplyr':
+
+    recode
+
+The following object is masked from 'package:purrr':
+
+    some</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(vegan)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: permute
+This is vegan 2.6-4
+
+Attaching package: 'vegan'
+
+The following object is masked from 'package:caret':
+
+    tolerance
+
+The following object is masked from 'package:survey':
+
+    calibrate</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(randomForest)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>randomForest 4.7-1.1
+Type rfNews() to see new features/changes/bug fixes.
+
+Attaching package: 'randomForest'
+
+The following object is masked from 'package:MuMIn':
+
+    importance
+
+The following object is masked from 'package:dplyr':
+
+    combine
+
+The following object is masked from 'package:ggplot2':
+
+    margin</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggalluvial)</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(viridis)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: viridisLite</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RColorBrewer)</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(psych)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'psych'
+
+The following object is masked from 'package:randomForest':
+
+    outlier
+
+The following object is masked from 'package:car':
+
+    logit
+
+The following object is masked from 'package:boot':
+
+    logit
+
+The following objects are masked from 'package:ggplot2':
+
+    %+%, alpha</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ComplexHeatmap)<span class="co"># This is a bioconducter package and you need to install it using devtools</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>========================================
+ComplexHeatmap version 2.23.1
+Bioconductor page: http://bioconductor.org/packages/ComplexHeatmap/
+Github page: https://github.com/jokergoo/ComplexHeatmap
+Documentation: http://jokergoo.github.io/ComplexHeatmap-reference
+
+If you use it in published research, please cite either one:
+- Gu, Z. Complex Heatmap Visualization. iMeta 2022.
+- Gu, Z. Complex heatmaps reveal patterns and correlations in multidimensional 
+    genomic data. Bioinformatics 2016.
+
+
+The new InteractiveComplexHeatmap package can directly export static 
+complex heatmaps into an interactive Shiny app with zero effort. Have a try!
+
+This message can be suppressed by:
+  suppressPackageStartupMessages(library(ComplexHeatmap))
+========================================</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co">#library(devtools)</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="co">#install_github("jokergoo/ComplexHeatmap")</span></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(circlize)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>========================================
+circlize version 0.4.16
+CRAN page: https://cran.r-project.org/package=circlize
+Github page: https://github.com/jokergoo/circlize
+Documentation: https://jokergoo.github.io/circlize_book/book/
+
+If you use it in published research, please cite:
+Gu, Z. circlize implements and enhances circular visualization
+  in R. Bioinformatics 2014.
+
+This message can be suppressed by:
+  suppressPackageStartupMessages(library(circlize))
+========================================</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(purrr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="data-processing" class="level1">
+<h1>###data processing</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="do">#### Load data ####</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>raw_data<span class="ot">&lt;-</span><span class="fu">read.csv</span>(<span class="st">"data/DATA_WEN.csv"</span>)</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Scale Multistressor(MS) values, calculate MS intensity and number of MS (nMS) over three thresholds</span></span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>process_raw_data <span class="ot">&lt;-</span> <span class="cf">function</span>(raw_data) {</span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>  raw_data <span class="sc">%&gt;%</span></span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>    janitor<span class="sc">::</span><span class="fu">clean_names</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(depth) <span class="sc">%&gt;%</span></span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_split</span>(<span class="at">.keep =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">set_names</span>(<span class="fu">c</span>(<span class="st">"A_Topsoil"</span>, <span class="st">"B_Subsoil"</span>, <span class="st">"C_Deepsoil"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">map</span>(<span class="sc">~</span>{</span>
+<span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a>      df <span class="ot">&lt;-</span> .x <span class="sc">%&gt;%</span></span>
+<span id="cb40-13"><a href="#cb40-13" aria-hidden="true" tabindex="-1"></a>        <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(weighted_emf))</span>
+<span id="cb40-14"><a href="#cb40-14" aria-hidden="true" tabindex="-1"></a>      ms_columns <span class="ot">&lt;-</span> df[, <span class="dv">7</span><span class="sc">:</span><span class="dv">14</span>]</span>
+<span id="cb40-15"><a href="#cb40-15" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb40-16"><a href="#cb40-16" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Scale MS</span></span>
+<span id="cb40-17"><a href="#cb40-17" aria-hidden="true" tabindex="-1"></a>      ms_scaled <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">lapply</span>(ms_columns, <span class="cf">function</span>(x) {</span>
+<span id="cb40-18"><a href="#cb40-18" aria-hidden="true" tabindex="-1"></a>        <span class="dv">100</span> <span class="sc">*</span> (x <span class="sc">-</span> <span class="fu">min</span>(x)) <span class="sc">/</span> (<span class="fu">max</span>(x) <span class="sc">-</span> <span class="fu">min</span>(x))</span>
+<span id="cb40-19"><a href="#cb40-19" aria-hidden="true" tabindex="-1"></a>      }))</span>
+<span id="cb40-20"><a href="#cb40-20" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb40-21"><a href="#cb40-21" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Calculate MS_intensity (mean of scaled MS)</span></span>
+<span id="cb40-22"><a href="#cb40-22" aria-hidden="true" tabindex="-1"></a>      ms_scaled<span class="sc">$</span>ms_intensity <span class="ot">&lt;-</span> <span class="fu">rowMeans</span>(ms_scaled, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)<span class="sc">/</span><span class="dv">100</span></span>
+<span id="cb40-23"><a href="#cb40-23" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb40-24"><a href="#cb40-24" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Calculate nMS exceeding thresholds</span></span>
+<span id="cb40-25"><a href="#cb40-25" aria-hidden="true" tabindex="-1"></a>      ms_scaled <span class="ot">&lt;-</span> ms_scaled <span class="sc">%&gt;%</span></span>
+<span id="cb40-26"><a href="#cb40-26" aria-hidden="true" tabindex="-1"></a>        <span class="fu">mutate</span>(</span>
+<span id="cb40-27"><a href="#cb40-27" aria-hidden="true" tabindex="-1"></a>          <span class="at">nMS25 =</span> <span class="fu">rowSums</span>(ms_scaled[, <span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>] <span class="sc">&gt;=</span> <span class="dv">25</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb40-28"><a href="#cb40-28" aria-hidden="true" tabindex="-1"></a>          <span class="at">nMS50 =</span> <span class="fu">rowSums</span>(ms_scaled[, <span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>] <span class="sc">&gt;=</span> <span class="dv">50</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb40-29"><a href="#cb40-29" aria-hidden="true" tabindex="-1"></a>          <span class="at">nMS75 =</span> <span class="fu">rowSums</span>(ms_scaled[, <span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>] <span class="sc">&gt;=</span> <span class="dv">75</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb40-30"><a href="#cb40-30" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb40-31"><a href="#cb40-31" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb40-32"><a href="#cb40-32" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Update dataframe with metadata and MS variables</span></span>
+<span id="cb40-33"><a href="#cb40-33" aria-hidden="true" tabindex="-1"></a>      df_combined <span class="ot">&lt;-</span> <span class="fu">bind_cols</span>(df[, <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="dv">15</span><span class="sc">:</span><span class="dv">21</span>)], ms_scaled)</span>
+<span id="cb40-34"><a href="#cb40-34" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb40-35"><a href="#cb40-35" aria-hidden="true" tabindex="-1"></a>      <span class="fu">list</span>(</span>
+<span id="cb40-36"><a href="#cb40-36" aria-hidden="true" tabindex="-1"></a>        <span class="at">metadata =</span> <span class="fu">list</span>(</span>
+<span id="cb40-37"><a href="#cb40-37" aria-hidden="true" tabindex="-1"></a>          <span class="at">depth =</span> <span class="fu">unique</span>(df<span class="sc">$</span>depth),</span>
+<span id="cb40-38"><a href="#cb40-38" aria-hidden="true" tabindex="-1"></a>          <span class="at">n_samples =</span> <span class="fu">nrow</span>(df),</span>
+<span id="cb40-39"><a href="#cb40-39" aria-hidden="true" tabindex="-1"></a>          <span class="at">ms_columns =</span> <span class="fu">names</span>(ms_columns),</span>
+<span id="cb40-40"><a href="#cb40-40" aria-hidden="true" tabindex="-1"></a>          <span class="at">df_columns =</span> <span class="fu">names</span>(df_combined)),</span>
+<span id="cb40-41"><a href="#cb40-41" aria-hidden="true" tabindex="-1"></a>        <span class="at">DF =</span> df_combined,</span>
+<span id="cb40-42"><a href="#cb40-42" aria-hidden="true" tabindex="-1"></a>        <span class="at">MS =</span> ms_scaled)</span>
+<span id="cb40-43"><a href="#cb40-43" aria-hidden="true" tabindex="-1"></a>    })}</span>
+<span id="cb40-44"><a href="#cb40-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-45"><a href="#cb40-45" aria-hidden="true" tabindex="-1"></a><span class="co"># Processed dataset for further analyses</span></span>
+<span id="cb40-46"><a href="#cb40-46" aria-hidden="true" tabindex="-1"></a>DATAFRAMES <span class="ot">&lt;-</span> <span class="fu">process_raw_data</span>(raw_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="figure-1" class="level1">
+<h1>###Figure 1</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine data from all depth layers (df_f1:dataframe for fig.1)</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>df_f1 <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(<span class="fu">lapply</span>(<span class="fu">c</span>(<span class="st">"A_Topsoil"</span>, <span class="st">"B_Subsoil"</span>, <span class="st">"C_Deepsoil"</span>), <span class="cf">function</span>(layer) DATAFRAMES[[layer]]<span class="sc">$</span>DF))</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Fig.1b and 1c boxplot</span></span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>plot_boxplot <span class="ot">&lt;-</span> <span class="cf">function</span>(data, x_var, y_var, colors,y_axis_label, <span class="at">y_limits =</span> <span class="fu">c</span>(<span class="fl">0.1</span>, <span class="fl">0.8</span>)) {</span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> .data[[x_var]], <span class="at">y =</span> .data[[y_var]], <span class="at">colour =</span> .data[[x_var]])) <span class="sc">+</span></span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_boxplot</span>(<span class="at">alpha =</span> <span class="dv">1</span>, <span class="at">linewidth =</span> <span class="fl">1.5</span>, <span class="at">width =</span> <span class="fl">0.4</span>) <span class="sc">+</span></span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">stat_summary</span>(<span class="at">fun =</span> mean, <span class="at">geom =</span> <span class="st">"point"</span>, <span class="at">shape =</span> <span class="st">"diamond"</span>, <span class="at">size =</span> <span class="dv">5</span>, <span class="at">color =</span> <span class="st">"#5E6054"</span>) <span class="sc">+</span></span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_jitter</span>(<span class="at">alpha =</span> <span class="fl">0.4</span>, <span class="at">size =</span> <span class="dv">5</span>, <span class="at">width =</span> <span class="fl">0.4</span>) <span class="sc">+</span></span>
+<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_color_manual</span>(<span class="at">values =</span> colors) <span class="sc">+</span></span>
+<span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_classic</span>(<span class="at">base_line_size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb41-12"><a href="#cb41-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(</span>
+<span id="cb41-13"><a href="#cb41-13" aria-hidden="true" tabindex="-1"></a>      <span class="at">panel.grid =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb41-14"><a href="#cb41-14" aria-hidden="true" tabindex="-1"></a>      <span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">"black"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>),</span>
+<span id="cb41-15"><a href="#cb41-15" aria-hidden="true" tabindex="-1"></a>      <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">20</span>),</span>
+<span id="cb41-16"><a href="#cb41-16" aria-hidden="true" tabindex="-1"></a>      <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">"black"</span>, <span class="at">size =</span> <span class="dv">18</span>),</span>
+<span id="cb41-17"><a href="#cb41-17" aria-hidden="true" tabindex="-1"></a>      <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">"black"</span>, <span class="at">size =</span> <span class="dv">18</span>),</span>
+<span id="cb41-18"><a href="#cb41-18" aria-hidden="true" tabindex="-1"></a>      <span class="at">legend.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">20</span>),</span>
+<span id="cb41-19"><a href="#cb41-19" aria-hidden="true" tabindex="-1"></a>      <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">20</span>)</span>
+<span id="cb41-20"><a href="#cb41-20" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
+<span id="cb41-21"><a href="#cb41-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">""</span>, <span class="at">y =</span> <span class="st">""</span>, <span class="at">color =</span> <span class="st">"Depth"</span>) <span class="sc">+</span></span>
+<span id="cb41-22"><a href="#cb41-22" aria-hidden="true" tabindex="-1"></a>    <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> y_limits)</span>
+<span id="cb41-23"><a href="#cb41-23" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb41-24"><a href="#cb41-24" aria-hidden="true" tabindex="-1"></a>save_plot_pdf <span class="ot">&lt;-</span> <span class="cf">function</span>(plot_obj, filename, <span class="at">width =</span> <span class="dv">7</span>, <span class="at">height =</span> <span class="dv">5</span>) {</span>
+<span id="cb41-25"><a href="#cb41-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">dir.create</span>(<span class="st">"output"</span>, <span class="at">showWarnings =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb41-26"><a href="#cb41-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggsave</span>(<span class="at">filename =</span> <span class="fu">file.path</span>(<span class="st">"output"</span>, filename), <span class="at">plot =</span> plot_obj, <span class="at">device =</span> <span class="st">"pdf"</span>, <span class="at">width =</span> width, <span class="at">height =</span> height)</span>
+<span id="cb41-27"><a href="#cb41-27" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb41-28"><a href="#cb41-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-29"><a href="#cb41-29" aria-hidden="true" tabindex="-1"></a>colors <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"#808080"</span>, <span class="st">"#FF6600"</span>, <span class="st">"#61A0D7"</span>)</span>
+<span id="cb41-30"><a href="#cb41-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-31"><a href="#cb41-31" aria-hidden="true" tabindex="-1"></a>p1b <span class="ot">&lt;-</span> <span class="fu">plot_boxplot</span>(df_f1, <span class="st">"depth"</span>, <span class="st">"ms_intensity"</span>, colors, <span class="at">y_axis_label =</span> <span class="st">"Intensity of mutiple stress"</span>)</span>
+<span id="cb41-32"><a href="#cb41-32" aria-hidden="true" tabindex="-1"></a><span class="fu">save_plot_pdf</span>(p1b, <span class="st">"Fig1b.pdf"</span>)</span>
+<span id="cb41-33"><a href="#cb41-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-34"><a href="#cb41-34" aria-hidden="true" tabindex="-1"></a>p1c <span class="ot">&lt;-</span> <span class="fu">plot_boxplot</span>(df_f1, <span class="st">"depth"</span>, <span class="st">"weighted_emf"</span>, colors, <span class="at">y_axis_label =</span> <span class="st">"Soil multifunctionality"</span>)</span>
+<span id="cb41-35"><a href="#cb41-35" aria-hidden="true" tabindex="-1"></a><span class="fu">save_plot_pdf</span>(p1c, <span class="st">"Fig1c.pdf"</span>)</span>
+<span id="cb41-36"><a href="#cb41-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-37"><a href="#cb41-37" aria-hidden="true" tabindex="-1"></a><span class="co"># Statistic test</span></span>
+<span id="cb41-38"><a href="#cb41-38" aria-hidden="true" tabindex="-1"></a>stat_lme <span class="ot">&lt;-</span> <span class="cf">function</span>(data, response) {</span>
+<span id="cb41-39"><a href="#cb41-39" aria-hidden="true" tabindex="-1"></a>  formula <span class="ot">&lt;-</span> <span class="fu">reformulate</span>(<span class="at">termlabels =</span> <span class="fu">c</span>(<span class="st">"depth"</span>, <span class="st">"(1|site)"</span>, <span class="st">"(1|veg_type)"</span>), <span class="at">response =</span> response)</span>
+<span id="cb41-40"><a href="#cb41-40" aria-hidden="true" tabindex="-1"></a>  model <span class="ot">&lt;-</span> <span class="fu">lmer</span>(formula, data)</span>
+<span id="cb41-41"><a href="#cb41-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">summary</span>(model))</span>
+<span id="cb41-42"><a href="#cb41-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">summary</span>(<span class="fu">emmeans</span>(model, pairwise <span class="sc">~</span> depth)))</span>
+<span id="cb41-43"><a href="#cb41-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">invisible</span>(model)</span>
+<span id="cb41-44"><a href="#cb41-44" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb41-45"><a href="#cb41-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-46"><a href="#cb41-46" aria-hidden="true" tabindex="-1"></a><span class="fu">stat_lme</span>(df_f1, <span class="st">"ms_intensity"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Linear mixed model fit by REML. t-tests use Satterthwaite's method [
+lmerModLmerTest]
+Formula: formula
+   Data: data
+
+REML criterion at convergence: -353.5
+
+Scaled residuals: 
+     Min       1Q   Median       3Q      Max 
+-2.49033 -0.45492 -0.02651  0.46960  2.51403 
+
+Random effects:
+ Groups   Name        Variance  Std.Dev.
+ site     (Intercept) 0.0118310 0.10877 
+ veg_type (Intercept) 0.0050317 0.07093 
+ Residual             0.0005057 0.02249 
+Number of obs: 118, groups:  site, 44; veg_type, 4
+
+Fixed effects:
+                 Estimate Std. Error        df t value Pr(&gt;|t|)    
+(Intercept)      0.423238   0.041111  2.942602  10.295  0.00212 ** 
+depthB_Subsoil   0.039456   0.005029 72.056998   7.846 2.95e-11 ***
+depthC_Deepsoil  0.037528   0.005399 72.268892   6.951 1.34e-09 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Correlation of Fixed Effects:
+            (Intr) dptB_S
+depthB_Sbsl -0.065       
+depthC_Dpsl -0.067  0.486</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Registered S3 method overwritten by 'broom':
+  method        from 
+  nobs.multinom MuMIn</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$emmeans
+ depth      emmean    SE   df lower.CL upper.CL
+ A_Topsoil   0.423 0.042 2.84    0.285    0.562
+ B_Subsoil   0.463 0.042 2.83    0.324    0.601
+ C_Deepsoil  0.461 0.042 2.84    0.323    0.599
+
+Degrees-of-freedom method: kenward-roger 
+Confidence level used: 0.95 
+
+$contrasts
+ contrast               estimate      SE   df t.ratio p.value
+ A_Topsoil - B_Subsoil  -0.03946 0.00503 72.1  -7.846  &lt;.0001
+ A_Topsoil - C_Deepsoil -0.03753 0.00540 72.3  -6.949  &lt;.0001
+ B_Subsoil - C_Deepsoil  0.00193 0.00530 72.2   0.364  0.9296
+
+Degrees-of-freedom method: kenward-roger 
+P value adjustment: tukey method for comparing a family of 3 estimates </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">stat_lme</span>(df_f1, <span class="st">"weighted_emf"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Linear mixed model fit by REML. t-tests use Satterthwaite's method [
+lmerModLmerTest]
+Formula: formula
+   Data: data
+
+REML criterion at convergence: -270.4
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-2.1721 -0.6518 -0.0709  0.5583  2.5299 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ site     (Intercept) 0.003226 0.05680 
+ veg_type (Intercept) 0.002341 0.04838 
+ Residual             0.002914 0.05398 
+Number of obs: 118, groups:  site, 44; veg_type, 4
+
+Fixed effects:
+                Estimate Std. Error       df t value Pr(&gt;|t|)    
+(Intercept)      0.41949    0.02830  2.77166  14.822  0.00101 ** 
+depthB_Subsoil  -0.01561    0.01203 73.39779  -1.297  0.19866    
+depthC_Deepsoil -0.06122    0.01280 75.98588  -4.783 8.28e-06 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Correlation of Fixed Effects:
+            (Intr) dptB_S
+depthB_Sbsl -0.225       
+depthC_Dpsl -0.228  0.489
+$emmeans
+ depth      emmean     SE   df lower.CL upper.CL
+ A_Topsoil   0.419 0.0288 3.27    0.332    0.507
+ B_Subsoil   0.404 0.0286 3.21    0.316    0.492
+ C_Deepsoil  0.358 0.0287 3.29    0.271    0.445
+
+Degrees-of-freedom method: kenward-roger 
+Confidence level used: 0.95 
+
+$contrasts
+ contrast               estimate     SE   df t.ratio p.value
+ A_Topsoil - B_Subsoil    0.0156 0.0120 73.1   1.296  0.4018
+ A_Topsoil - C_Deepsoil   0.0612 0.0128 75.7   4.772  &lt;.0001
+ B_Subsoil - C_Deepsoil   0.0456 0.0126 75.2   3.621  0.0015
+
+Degrees-of-freedom method: kenward-roger 
+P value adjustment: tukey method for comparing a family of 3 estimates </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fig 1d linear regression</span></span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>depth_lm_analysis <span class="ot">&lt;-</span> <span class="cf">function</span>(data) {</span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">map_dfr</span>(<span class="fu">split</span>(data, data<span class="sc">$</span>depth), <span class="sc">~</span>{</span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>    s <span class="ot">&lt;-</span> <span class="fu">summary</span>(<span class="fu">lm</span>(weighted_emf <span class="sc">~</span> ms_intensity, .x))</span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tibble</span>(<span class="at">depth =</span> .x<span class="sc">$</span>depth[<span class="dv">1</span>], <span class="at">R2_adj =</span> <span class="fu">signif</span>(s<span class="sc">$</span>adj.r.squared, <span class="dv">2</span>),</span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a>           <span class="at">p_value =</span> <span class="fu">pf</span>(s<span class="sc">$</span>fstatistic[<span class="dv">1</span>], s<span class="sc">$</span>fstatistic[<span class="dv">2</span>], s<span class="sc">$</span>fstatistic[<span class="dv">3</span>], <span class="at">lower.tail =</span> <span class="cn">FALSE</span>))</span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-10"><a href="#cb47-10" aria-hidden="true" tabindex="-1"></a>lm_summary <span class="ot">&lt;-</span> <span class="fu">depth_lm_analysis</span>(df_f1)</span>
+<span id="cb47-11"><a href="#cb47-11" aria-hidden="true" tabindex="-1"></a>lm_summary <span class="ot">&lt;-</span> lm_summary <span class="sc">%&gt;%</span></span>
+<span id="cb47-12"><a href="#cb47-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">significance =</span> <span class="fu">case_when</span>(p_value <span class="sc">&lt;</span> <span class="fl">0.001</span> <span class="sc">~</span> <span class="st">"***"</span>, p_value <span class="sc">&lt;</span> <span class="fl">0.01</span> <span class="sc">~</span> <span class="st">"**"</span>, p_value <span class="sc">&lt;</span> <span class="fl">0.05</span><span class="sc">~</span> <span class="st">"*"</span>, <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"ns"</span>),</span>
+<span id="cb47-13"><a href="#cb47-13" aria-hidden="true" tabindex="-1"></a>         <span class="at">label =</span> <span class="fu">paste0</span>(<span class="st">"R² = "</span>, R2_adj, significance), <span class="at">x_pos =</span> <span class="fl">0.5</span>,</span>
+<span id="cb47-14"><a href="#cb47-14" aria-hidden="true" tabindex="-1"></a>         <span class="at">y_pos =</span> <span class="fu">case_when</span>(depth <span class="sc">==</span> <span class="st">"A_Topsoil"</span> <span class="sc">~</span> <span class="fl">0.55</span>, depth <span class="sc">==</span> <span class="st">"B_Subsoil"</span> <span class="sc">~</span> <span class="fl">0.53</span>, depth <span class="sc">==</span> <span class="st">"C_Deepsoil"</span> <span class="sc">~</span> <span class="fl">0.51</span>))</span>
+<span id="cb47-15"><a href="#cb47-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-16"><a href="#cb47-16" aria-hidden="true" tabindex="-1"></a>p1d <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> df_f1, <span class="fu">aes</span>(<span class="at">x =</span> ms_intensity, <span class="at">y =</span> weighted_emf, <span class="at">group =</span> depth, <span class="at">color =</span> <span class="fu">as.factor</span>(depth))) <span class="sc">+</span></span>
+<span id="cb47-17"><a href="#cb47-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb47-18"><a href="#cb47-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb47-19"><a href="#cb47-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Soil Multifunctionality"</span>) <span class="sc">+</span> <span class="fu">xlab</span>(<span class="st">"Intensity of multiple stresses"</span>) <span class="sc">+</span></span>
+<span id="cb47-20"><a href="#cb47-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#808080"</span>, <span class="st">"#FF6600"</span>, <span class="st">"#61A0D7"</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"A_Topsoil"</span>, <span class="st">"B_Subsoil"</span>, <span class="st">"C_Deepsoil"</span>)) <span class="sc">+</span></span>
+<span id="cb47-21"><a href="#cb47-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.grid =</span> <span class="fu">element_blank</span>(),<span class="at">legend.title =</span> <span class="fu">element_blank</span>(),<span class="at">legend.position =</span> <span class="st">"top"</span>,<span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>),</span>
+<span id="cb47-22"><a href="#cb47-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>, <span class="at">color =</span> <span class="st">"black"</span>),<span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>)) <span class="sc">+</span></span>
+<span id="cb47-23"><a href="#cb47-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">data =</span> lm_summary,<span class="fu">aes</span>(<span class="at">x =</span> x_pos, <span class="at">y =</span> y_pos, <span class="at">label =</span> label),<span class="at">inherit.aes =</span> <span class="cn">FALSE</span>,<span class="at">size =</span> <span class="dv">5</span>,<span class="at">color =</span> <span class="st">"black"</span>)</span>
+<span id="cb47-24"><a href="#cb47-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-25"><a href="#cb47-25" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"output/Fig1d.pdf"</span>, p1d, <span class="at">width =</span> <span class="dv">6</span>, <span class="at">height =</span> <span class="dv">6</span>, <span class="at">device =</span> <span class="st">"pdf"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fig 1e bar plot</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the frequency of the site with MS (nMS &gt; 1 site (%))</span></span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>df_f1e <span class="ot">&lt;-</span> df_f1 <span class="sc">%&gt;%</span></span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">starts_with</span>(<span class="st">"nMS"</span>), <span class="at">names_to =</span> <span class="st">"threshold"</span>, <span class="at">values_to =</span> <span class="st">"nMS_value"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">threshold =</span> <span class="fu">gsub</span>(<span class="st">"nMS"</span>, <span class="st">""</span>, threshold)) <span class="sc">%&gt;%</span></span>
+<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(depth, threshold) <span class="sc">%&gt;%</span></span>
+<span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">frequency =</span> <span class="fu">mean</span>(nMS_value <span class="sc">&gt;</span> <span class="dv">1</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="sc">*</span> <span class="dv">100</span>, <span class="at">.groups =</span> <span class="st">"drop"</span>)</span>
+<span id="cb49-8"><a href="#cb49-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-9"><a href="#cb49-9" aria-hidden="true" tabindex="-1"></a>p1e <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df_f1e, <span class="fu">aes</span>(<span class="at">x =</span> threshold, <span class="at">y =</span> frequency, <span class="at">fill =</span> depth)) <span class="sc">+</span></span>
+<span id="cb49-10"><a href="#cb49-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="fl">0.7</span>), <span class="at">width =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb49-11"><a href="#cb49-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"A_Topsoil"</span> <span class="ot">=</span> <span class="st">"#C6C6C6"</span>, <span class="st">"B_Subsoil"</span> <span class="ot">=</span> <span class="st">"#FF944D"</span>, <span class="st">"C_Deepsoil"</span> <span class="ot">=</span> <span class="st">"#77B6ED"</span>)) <span class="sc">+</span></span>
+<span id="cb49-12"><a href="#cb49-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Frequency of the sites (%)"</span>, <span class="at">x =</span> <span class="st">"Threshold of multiple stressors (%)"</span>, <span class="at">fill =</span> <span class="st">"Depth"</span>) <span class="sc">+</span></span>
+<span id="cb49-13"><a href="#cb49-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
+<span id="cb49-14"><a href="#cb49-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb49-15"><a href="#cb49-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>, <span class="at">color =</span> <span class="st">"black"</span>),</span>
+<span id="cb49-16"><a href="#cb49-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>),</span>
+<span id="cb49-17"><a href="#cb49-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>),</span>
+<span id="cb49-18"><a href="#cb49-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>)</span>
+<span id="cb49-19"><a href="#cb49-19" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb49-20"><a href="#cb49-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-21"><a href="#cb49-21" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"output/Fig1e.pdf"</span>, p1e, <span class="at">width =</span> <span class="dv">7</span>, <span class="at">height =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="figure-2" class="level1">
+<h1>###Figure 2</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Relative importance of mutiple stressors</span></span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>super.MOD <span class="ot">&lt;-</span> <span class="fu">imap</span>(DATAFRAMES, <span class="cf">function</span>(iter, depth) {</span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>  df <span class="ot">&lt;-</span> iter<span class="sc">$</span>DF</span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a>  ms <span class="ot">&lt;-</span> iter<span class="sc">$</span>MS</span>
+<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Modeling data</span></span>
+<span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a>  dfi <span class="ot">&lt;-</span> <span class="fu">bind_cols</span>(df[<span class="st">"weighted_emf"</span>],ms <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="sc">-</span>ms_intensity))</span>
+<span id="cb50-8"><a href="#cb50-8" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb50-9"><a href="#cb50-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Linear model</span></span>
+<span id="cb50-10"><a href="#cb50-10" aria-hidden="true" tabindex="-1"></a>  mdl <span class="ot">&lt;-</span> <span class="fu">lm</span>(weighted_emf <span class="sc">~</span> ., <span class="at">data =</span> dfi)</span>
+<span id="cb50-11"><a href="#cb50-11" aria-hidden="true" tabindex="-1"></a>  assumptions <span class="ot">&lt;-</span> <span class="fu">gvlma</span>(mdl)</span>
+<span id="cb50-12"><a href="#cb50-12" aria-hidden="true" tabindex="-1"></a>  vif_res <span class="ot">&lt;-</span> <span class="fu">vif</span>(mdl)</span>
+<span id="cb50-13"><a href="#cb50-13" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb50-14"><a href="#cb50-14" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Relative importance</span></span>
+<span id="cb50-15"><a href="#cb50-15" aria-hidden="true" tabindex="-1"></a>  RIMP <span class="ot">&lt;-</span> <span class="fu">calc.relimp</span>(mdl)</span>
+<span id="cb50-16"><a href="#cb50-16" aria-hidden="true" tabindex="-1"></a>  R2 <span class="ot">&lt;-</span> RIMP<span class="sc">@</span>R2</span>
+<span id="cb50-17"><a href="#cb50-17" aria-hidden="true" tabindex="-1"></a>  RIMP_df <span class="ot">&lt;-</span> <span class="fu">enframe</span>(RIMP<span class="sc">@</span>lmg, <span class="at">name =</span> <span class="st">"variable"</span>, <span class="at">value =</span> <span class="st">"lmg.imp"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb50-18"><a href="#cb50-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">perc.imp =</span> lmg.imp <span class="sc">/</span> R2, <span class="at">ori.DF =</span> depth)</span>
+<span id="cb50-19"><a href="#cb50-19" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb50-20"><a href="#cb50-20" aria-hidden="true" tabindex="-1"></a>  <span class="co"># MuMIn model selection</span></span>
+<span id="cb50-21"><a href="#cb50-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">options</span>(<span class="at">na.action =</span> <span class="st">"na.fail"</span>)</span>
+<span id="cb50-22"><a href="#cb50-22" aria-hidden="true" tabindex="-1"></a>  best_models <span class="ot">&lt;-</span> <span class="fu">dredge</span>(mdl, <span class="at">rank =</span> <span class="st">"BIC"</span>, <span class="at">extra =</span> <span class="st">"R^2"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb50-23"><a href="#cb50-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">subset</span>(delta <span class="sc">&lt;</span> <span class="dv">4</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb50-24"><a href="#cb50-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">ori.DF =</span> depth)</span>
+<span id="cb50-25"><a href="#cb50-25" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb50-26"><a href="#cb50-26" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Return results</span></span>
+<span id="cb50-27"><a href="#cb50-27" aria-hidden="true" tabindex="-1"></a>  iter<span class="sc">$</span>DF <span class="ot">&lt;-</span> df</span>
+<span id="cb50-28"><a href="#cb50-28" aria-hidden="true" tabindex="-1"></a>  iter<span class="sc">$</span>MS <span class="ot">&lt;-</span> ms</span>
+<span id="cb50-29"><a href="#cb50-29" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb50-30"><a href="#cb50-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list</span>(</span>
+<span id="cb50-31"><a href="#cb50-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">assumptions =</span> <span class="fu">list</span>(<span class="at">assumptions =</span> assumptions, <span class="at">vif =</span> vif_res),</span>
+<span id="cb50-32"><a href="#cb50-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">relative.imp =</span> RIMP_df,</span>
+<span id="cb50-33"><a href="#cb50-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">R2 =</span> R2,</span>
+<span id="cb50-34"><a href="#cb50-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">MuMIN.mod =</span> <span class="fu">as.data.frame</span>(best_models),</span>
+<span id="cb50-35"><a href="#cb50-35" aria-hidden="true" tabindex="-1"></a>    <span class="at">updated =</span> iter</span>
+<span id="cb50-36"><a href="#cb50-36" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb50-37"><a href="#cb50-37" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fixed term is "(Intercept)"
+Fixed term is "(Intercept)"
+Fixed term is "(Intercept)"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine and export results</span></span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>rimp_result <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(<span class="fu">map</span>(super.MOD, <span class="st">"relative.imp"</span>)) <span class="co">#result for fig.2</span></span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>mumin_result <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(<span class="fu">map</span>(super.MOD, <span class="st">"MuMIN.mod"</span>)) <span class="co">#result for fig.S2</span></span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-6"><a href="#cb52-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Sankey diagram_fig.2</span></span>
+<span id="cb52-7"><a href="#cb52-7" aria-hidden="true" tabindex="-1"></a>sankey_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb52-8"><a href="#cb52-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">Source =</span> rimp_result<span class="sc">$</span>variable,</span>
+<span id="cb52-9"><a href="#cb52-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">Target =</span> rimp_result<span class="sc">$</span>ori.DF,</span>
+<span id="cb52-10"><a href="#cb52-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">Value =</span> rimp_result<span class="sc">$</span>perc.imp</span>
+<span id="cb52-11"><a href="#cb52-11" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb52-12"><a href="#cb52-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-13"><a href="#cb52-13" aria-hidden="true" tabindex="-1"></a>sankey_data<span class="sc">$</span>Source<span class="ot">&lt;-</span><span class="fu">factor</span>(sankey_data<span class="sc">$</span>Source, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"nMS25"</span>, <span class="st">"nMS50"</span>, <span class="st">"nMS75"</span>, <span class="st">"aridity"</span>,<span class="st">"warming"</span>,<span class="st">"maxt"</span>,<span class="st">"extreme_events"</span>,<span class="st">"seasonality"</span>,<span class="st">"human_influence"</span>,<span class="st">"salinity"</span>,<span class="st">"p_h"</span>))</span>
+<span id="cb52-14"><a href="#cb52-14" aria-hidden="true" tabindex="-1"></a>sankey_data<span class="sc">$</span>Target <span class="ot">&lt;-</span> <span class="fu">factor</span>(sankey_data<span class="sc">$</span>Target, <span class="at">levels =</span> <span class="fu">unique</span>(rimp_result<span class="sc">$</span>ori.DF))</span>
+<span id="cb52-15"><a href="#cb52-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-16"><a href="#cb52-16" aria-hidden="true" tabindex="-1"></a>custom_colors <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"#FDE724"</span>,<span class="st">"#B4DD2B"</span>,<span class="st">"#6BCD58"</span>,<span class="st">"#35B778"</span>,<span class="st">"#1E9C88"</span>,<span class="st">"#25828D"</span>,<span class="st">"#30678D"</span>,<span class="st">"#3D4989"</span>,<span class="st">"#6A5ACD"</span>,<span class="st">"#472777"</span>,<span class="st">"#440154"</span>)</span>
+<span id="cb52-17"><a href="#cb52-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-18"><a href="#cb52-18" aria-hidden="true" tabindex="-1"></a>p2<span class="ot">&lt;-</span><span class="fu">ggplot</span>(sankey_data, <span class="fu">aes</span>(<span class="at">axis1 =</span> Source, <span class="at">axis2 =</span> Target, <span class="at">y =</span> Value)) <span class="sc">+</span></span>
+<span id="cb52-19"><a href="#cb52-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_alluvium</span>(<span class="fu">aes</span>(<span class="at">fill =</span> Source), <span class="at">width =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">12</span>) <span class="sc">+</span></span>
+<span id="cb52-20"><a href="#cb52-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_stratum</span>(<span class="at">width =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">12</span>, <span class="at">fill =</span> <span class="st">"grey90"</span>, <span class="at">color =</span> <span class="st">"grey50"</span>) <span class="sc">+</span></span>
+<span id="cb52-21"><a href="#cb52-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">stat =</span> <span class="st">"stratum"</span>, <span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">after_stat</span>(stratum)), <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb52-22"><a href="#cb52-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> custom_colors) <span class="sc">+</span></span>
+<span id="cb52-23"><a href="#cb52-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_void</span>() <span class="sc">+</span></span>
+<span id="cb52-24"><a href="#cb52-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span>
+<span id="cb52-25"><a href="#cb52-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-26"><a href="#cb52-26" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"output/Fig2.pdf"</span>, p2, <span class="at">width =</span> <span class="dv">5</span>, <span class="at">height =</span> <span class="dv">6</span>, <span class="at">device =</span> <span class="st">"pdf"</span>)</span>
+<span id="cb52-27"><a href="#cb52-27" aria-hidden="true" tabindex="-1"></a><span class="co"># The importance of each stressor group is calculated by summing its corresponding stress factors in rimp_result</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="figure-3" class="level1">
+<h1>###Figure 3</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine data from all soil layers</span></span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>all_df <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(<span class="fu">lapply</span>(<span class="fu">c</span>(<span class="st">"A_Topsoil"</span>, <span class="st">"B_Subsoil"</span>, <span class="st">"C_Deepsoil"</span>), <span class="cf">function</span>(layer) DATAFRAMES[[layer]]<span class="sc">$</span>DF))</span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert threshold indicators to long format</span></span>
+<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a>df_f3 <span class="ot">&lt;-</span> <span class="fu">melt</span>(</span>
+<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a>  all_df,</span>
+<span id="cb53-7"><a href="#cb53-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">id.vars =</span> <span class="fu">c</span>(<span class="st">"sample_id"</span>, <span class="st">"weighted_emf"</span>, <span class="st">"depth"</span>),</span>
+<span id="cb53-8"><a href="#cb53-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">measure.vars =</span> <span class="fu">c</span>(<span class="st">"nMS25"</span>, <span class="st">"nMS50"</span>, <span class="st">"nMS75"</span>),</span>
+<span id="cb53-9"><a href="#cb53-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">variable.name =</span> <span class="st">"threshold"</span>,</span>
+<span id="cb53-10"><a href="#cb53-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">value.name =</span> <span class="st">"nMS"</span>)</span>
+<span id="cb53-11"><a href="#cb53-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-12"><a href="#cb53-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Statistics</span></span>
+<span id="cb53-13"><a href="#cb53-13" aria-hidden="true" tabindex="-1"></a>stat_labels <span class="ot">&lt;-</span> df_f3 <span class="sc">%&gt;%</span></span>
+<span id="cb53-14"><a href="#cb53-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(depth, threshold) <span class="sc">%&gt;%</span></span>
+<span id="cb53-15"><a href="#cb53-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">adj_r2 =</span> <span class="fu">summary</span>(<span class="fu">lm</span>(weighted_emf <span class="sc">~</span> nMS))<span class="sc">$</span>adj.r.squared,</span>
+<span id="cb53-16"><a href="#cb53-16" aria-hidden="true" tabindex="-1"></a>            <span class="at">pval =</span> <span class="fu">summary</span>(<span class="fu">lm</span>(weighted_emf <span class="sc">~</span> nMS))<span class="sc">$</span>coefficients[<span class="dv">2</span>, <span class="dv">4</span>],</span>
+<span id="cb53-17"><a href="#cb53-17" aria-hidden="true" tabindex="-1"></a>            <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb53-18"><a href="#cb53-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">stars =</span> <span class="fu">case_when</span>(pval <span class="sc">&lt;</span> <span class="fl">0.001</span> <span class="sc">~</span> <span class="st">"***"</span>,pval <span class="sc">&lt;</span> <span class="fl">0.01</span> <span class="sc">~</span> <span class="st">"**"</span>,pval <span class="sc">&lt;</span> <span class="fl">0.05</span>  <span class="sc">~</span> <span class="st">"*"</span>,<span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">""</span>),</span>
+<span id="cb53-19"><a href="#cb53-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">label =</span> <span class="fu">paste0</span>(<span class="st">"R² = "</span>, <span class="fu">signif</span>(adj_r2, <span class="dv">2</span>), stars))</span>
+<span id="cb53-20"><a href="#cb53-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-21"><a href="#cb53-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Merge statistical labels back into main data</span></span>
+<span id="cb53-22"><a href="#cb53-22" aria-hidden="true" tabindex="-1"></a>df_f3 <span class="ot">&lt;-</span> <span class="fu">left_join</span>(df_f3, stat_labels, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"depth"</span>, <span class="st">"threshold"</span>))</span>
+<span id="cb53-23"><a href="#cb53-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-24"><a href="#cb53-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot</span></span>
+<span id="cb53-25"><a href="#cb53-25" aria-hidden="true" tabindex="-1"></a>p3<span class="ot">&lt;-</span><span class="fu">ggplot</span>(df_f3, <span class="fu">aes</span>(<span class="at">x =</span> nMS, <span class="at">y =</span> weighted_emf, <span class="at">color =</span> threshold)) <span class="sc">+</span></span>
+<span id="cb53-26"><a href="#cb53-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.6</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb53-27"><a href="#cb53-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
+<span id="cb53-28"><a href="#cb53-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(threshold <span class="sc">~</span> depth) <span class="sc">+</span></span>
+<span id="cb53-29"><a href="#cb53-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> label),</span>
+<span id="cb53-30"><a href="#cb53-30" aria-hidden="true" tabindex="-1"></a>            <span class="at">x =</span> <span class="cn">Inf</span>, <span class="at">y =</span> <span class="sc">-</span><span class="cn">Inf</span>, <span class="at">hjust =</span> <span class="fl">1.05</span>, <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">1.1</span>,</span>
+<span id="cb53-31"><a href="#cb53-31" aria-hidden="true" tabindex="-1"></a>            <span class="at">inherit.aes =</span> <span class="cn">FALSE</span>, <span class="at">size =</span> <span class="dv">4</span>) <span class="sc">+</span></span>
+<span id="cb53-32"><a href="#cb53-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#808080"</span>, <span class="st">"#FF6600"</span>, <span class="st">"#61A0D7"</span>)) <span class="sc">+</span></span>
+<span id="cb53-33"><a href="#cb53-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Number of stressors exceeding threshold"</span>,<span class="at">y =</span> <span class="st">"Soil Multifunctionality"</span>,<span class="at">olor =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb53-34"><a href="#cb53-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb53-35"><a href="#cb53-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"top"</span>,<span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>), <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>, <span class="at">color =</span> <span class="st">"black"</span>),</span>
+<span id="cb53-36"><a href="#cb53-36" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>),<span class="at">strip.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>),<span class="at">panel.grid =</span> <span class="fu">element_blank</span>())</span>
+<span id="cb53-37"><a href="#cb53-37" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb53-38"><a href="#cb53-38" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"output/Fig3.pdf"</span>, p3, <span class="at">width =</span> <span class="dv">6</span>, <span class="at">height =</span> <span class="dv">6</span>, <span class="at">device =</span> <span class="st">"pdf"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+</div>
+</section>
+<section id="figure-4" class="level1">
+<h1>###Figure 4</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>df_f4 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/EMF&amp;MS_heatmap_v21.csv"</span>)</span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>layers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"A_Topsoil"</span>, <span class="st">"B_Subsoil"</span>, <span class="st">"C_Deepsoil"</span>)</span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>ms_vars <span class="ot">&lt;-</span> <span class="dv">6</span><span class="sc">:</span><span class="dv">21</span></span>
+<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a>emf_vars <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span><span class="sc">:</span><span class="dv">5</span>, <span class="dv">28</span><span class="sc">:</span><span class="dv">35</span>)</span>
+<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-6"><a href="#cb55-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute Spearman correlation coefficients and adjusted p-values</span></span>
+<span id="cb55-7"><a href="#cb55-7" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">map</span>(layers, <span class="sc">~</span>{</span>
+<span id="cb55-8"><a href="#cb55-8" aria-hidden="true" tabindex="-1"></a>  data <span class="ot">&lt;-</span> df_f4 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Depth <span class="sc">==</span> .x)</span>
+<span id="cb55-9"><a href="#cb55-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">corr.test</span>(data[, ms_vars], data[, emf_vars], <span class="at">method =</span> <span class="st">"spearman"</span>, <span class="at">adjust =</span> <span class="st">"holm"</span>)</span>
+<span id="cb55-10"><a href="#cb55-10" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb55-11"><a href="#cb55-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-12"><a href="#cb55-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine correlation and p-value matrices</span></span>
+<span id="cb55-13"><a href="#cb55-13" aria-hidden="true" tabindex="-1"></a>res_mat <span class="ot">&lt;-</span> <span class="fu">do.call</span>(cbind, <span class="fu">map</span>(results, <span class="st">"r"</span>))</span>
+<span id="cb55-14"><a href="#cb55-14" aria-hidden="true" tabindex="-1"></a>pval_mat <span class="ot">&lt;-</span> <span class="fu">do.call</span>(cbind, <span class="fu">map</span>(results, <span class="st">"p"</span>))</span>
+<span id="cb55-15"><a href="#cb55-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-16"><a href="#cb55-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert p-values to significance stars</span></span>
+<span id="cb55-17"><a href="#cb55-17" aria-hidden="true" tabindex="-1"></a>pval_star <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="st">""</span>, <span class="at">nrow =</span> <span class="fu">nrow</span>(pval_mat), <span class="at">ncol =</span> <span class="fu">ncol</span>(pval_mat))</span>
+<span id="cb55-18"><a href="#cb55-18" aria-hidden="true" tabindex="-1"></a>pval_star[pval_mat <span class="sc">&lt;</span> <span class="fl">0.001</span>] <span class="ot">&lt;-</span> <span class="st">"***"</span></span>
+<span id="cb55-19"><a href="#cb55-19" aria-hidden="true" tabindex="-1"></a>pval_star[pval_mat <span class="sc">&gt;=</span> <span class="fl">0.001</span> <span class="sc">&amp;</span> pval_mat <span class="sc">&lt;</span> <span class="fl">0.01</span>] <span class="ot">&lt;-</span> <span class="st">"**"</span></span>
+<span id="cb55-20"><a href="#cb55-20" aria-hidden="true" tabindex="-1"></a>pval_star[pval_mat <span class="sc">&gt;=</span> <span class="fl">0.01</span> <span class="sc">&amp;</span> pval_mat <span class="sc">&lt;</span> <span class="fl">0.05</span>] <span class="ot">&lt;-</span> <span class="st">"*"</span></span>
+<span id="cb55-21"><a href="#cb55-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-22"><a href="#cb55-22" aria-hidden="true" tabindex="-1"></a>col_fun <span class="ot">&lt;-</span> <span class="fu">colorRamp2</span>(<span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">0</span>, <span class="fl">0.5</span>), <span class="fu">c</span>(<span class="st">"#00BFFF"</span>, <span class="st">"white"</span>, <span class="st">"red"</span>))</span>
+<span id="cb55-23"><a href="#cb55-23" aria-hidden="true" tabindex="-1"></a>col_split <span class="ot">&lt;-</span> <span class="fu">rep</span>(layers, <span class="at">each =</span> <span class="dv">11</span>)</span>
+<span id="cb55-24"><a href="#cb55-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-25"><a href="#cb55-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot correlation heatmap</span></span>
+<span id="cb55-26"><a href="#cb55-26" aria-hidden="true" tabindex="-1"></a>p4<span class="ot">&lt;-</span><span class="fu">Heatmap</span>(res_mat, <span class="at">col =</span> col_fun, <span class="at">cluster_rows =</span> <span class="cn">FALSE</span>, <span class="at">cluster_columns =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb55-27"><a href="#cb55-27" aria-hidden="true" tabindex="-1"></a>        <span class="at">column_split =</span> col_split,</span>
+<span id="cb55-28"><a href="#cb55-28" aria-hidden="true" tabindex="-1"></a>        <span class="at">column_title_gp =</span> <span class="fu">gpar</span>(<span class="at">fontsize =</span> <span class="dv">12</span>, <span class="at">col =</span> <span class="fu">c</span>(<span class="st">"#666666"</span>, <span class="st">"#06959C"</span>, <span class="st">"#2D7BEE"</span>)),</span>
+<span id="cb55-29"><a href="#cb55-29" aria-hidden="true" tabindex="-1"></a>        <span class="at">column_names_gp =</span> <span class="fu">gpar</span>(<span class="at">fontsize =</span> <span class="dv">10</span>),</span>
+<span id="cb55-30"><a href="#cb55-30" aria-hidden="true" tabindex="-1"></a>        <span class="at">cell_fun =</span> <span class="cf">function</span>(j, i, x, y, w, h, fill) {</span>
+<span id="cb55-31"><a href="#cb55-31" aria-hidden="true" tabindex="-1"></a>          <span class="fu">grid.text</span>(pval_star[i, j], x, y, <span class="at">gp =</span> <span class="fu">gpar</span>(<span class="at">fontsize =</span> <span class="dv">10</span>))</span>
+<span id="cb55-32"><a href="#cb55-32" aria-hidden="true" tabindex="-1"></a>        })</span>
+<span id="cb55-33"><a href="#cb55-33" aria-hidden="true" tabindex="-1"></a><span class="fu">pdf</span>(<span class="st">"output/Fig4.pdf"</span>, <span class="at">width =</span> <span class="dv">9</span>, <span class="at">height =</span> <span class="dv">6</span>)</span>
+<span id="cb55-34"><a href="#cb55-34" aria-hidden="true" tabindex="-1"></a><span class="fu">draw</span>(p4)</span>
+<span id="cb55-35"><a href="#cb55-35" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>png 
+  2 </code></pre>
+</div>
+</div>
+</section>
+<section id="figure-5" class="level1">
+<h1>###Figure 5</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="co"># reorganize data (df_f5:dataframe for fig.5)</span></span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>df_f5 <span class="ot">&lt;-</span> all_df <span class="sc">%&gt;%</span></span>
+<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(sample_id, depth, weighted_emf, aridity, warming, nMS25, nMS50, nMS75)</span>
+<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert to long format for easier iteration</span></span>
+<span id="cb57-6"><a href="#cb57-6" aria-hidden="true" tabindex="-1"></a>df_f5_long <span class="ot">&lt;-</span> df_f5 <span class="sc">%&gt;%</span></span>
+<span id="cb57-7"><a href="#cb57-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">starts_with</span>(<span class="st">"nMS"</span>), <span class="at">names_to =</span> <span class="st">"MS_level"</span>, <span class="at">values_to =</span> <span class="st">"MS_value"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb57-8"><a href="#cb57-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">threshold =</span> <span class="fu">case_when</span>(MS_level <span class="sc">==</span> <span class="st">"nMS25"</span> <span class="sc">~</span> <span class="st">"MS&gt;25%"</span>, MS_level <span class="sc">==</span> <span class="st">"nMS50"</span> <span class="sc">~</span> <span class="st">"MS&gt;50%"</span>, MS_level <span class="sc">==</span> <span class="st">"nMS75"</span> <span class="sc">~</span> <span class="st">"MS&gt;75%"</span>))</span>
+<span id="cb57-9"><a href="#cb57-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-10"><a href="#cb57-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Classify into high nMS, low nMS, and general environments</span></span>
+<span id="cb57-11"><a href="#cb57-11" aria-hidden="true" tabindex="-1"></a>df_f5_classified <span class="ot">&lt;-</span> df_f5_long <span class="sc">%&gt;%</span></span>
+<span id="cb57-12"><a href="#cb57-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(MS_level) <span class="sc">%&gt;%</span></span>
+<span id="cb57-13"><a href="#cb57-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">type =</span> <span class="fu">case_when</span>(</span>
+<span id="cb57-14"><a href="#cb57-14" aria-hidden="true" tabindex="-1"></a>    MS_value <span class="sc">&gt;</span> <span class="fu">median</span>(MS_value, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="st">"High nMS environment"</span>,</span>
+<span id="cb57-15"><a href="#cb57-15" aria-hidden="true" tabindex="-1"></a>    MS_value <span class="sc">&lt;=</span> <span class="fu">median</span>(MS_value, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="st">"Low nMS environment"</span></span>
+<span id="cb57-16"><a href="#cb57-16" aria-hidden="true" tabindex="-1"></a>  )) <span class="sc">%&gt;%</span></span>
+<span id="cb57-17"><a href="#cb57-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb57-18"><a href="#cb57-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bind_rows</span>(df_f5_long <span class="sc">%&gt;%</span> </span>
+<span id="cb57-19"><a href="#cb57-19" aria-hidden="true" tabindex="-1"></a>            <span class="fu">mutate</span>(<span class="at">type =</span> <span class="st">"General environment (all sites)"</span>))</span>
+<span id="cb57-20"><a href="#cb57-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-21"><a href="#cb57-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot</span></span>
+<span id="cb57-22"><a href="#cb57-22" aria-hidden="true" tabindex="-1"></a>plot_stress_effect <span class="ot">&lt;-</span> <span class="cf">function</span>(df_f5, stress_var, stress_label) {</span>
+<span id="cb57-23"><a href="#cb57-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(df_f5, <span class="fu">aes</span>(<span class="at">x =</span> .data[[stress_var]], <span class="at">y =</span> weighted_emf, <span class="at">color =</span> type)) <span class="sc">+</span></span>
+<span id="cb57-24"><a href="#cb57-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb57-25"><a href="#cb57-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">facet_grid</span>(threshold <span class="sc">~</span> depth) <span class="sc">+</span></span>
+<span id="cb57-26"><a href="#cb57-26" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x =</span> stress_label, <span class="at">y =</span> <span class="st">"Soil multifunctionality"</span>) <span class="sc">+</span></span>
+<span id="cb57-27"><a href="#cb57-27" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"General environment (all sites)"</span> <span class="ot">=</span> <span class="st">"#686868"</span>, <span class="st">"High nMS environment"</span> <span class="ot">=</span> <span class="st">"#E12F47"</span>, <span class="st">"Low nMS environment"</span> <span class="ot">=</span> <span class="st">"#2D7BEE"</span>)) <span class="sc">+</span></span>
+<span id="cb57-28"><a href="#cb57-28" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb57-29"><a href="#cb57-29" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">panel.grid =</span> <span class="fu">element_blank</span>(), <span class="at">legend.title =</span> <span class="fu">element_blank</span>(), <span class="at">legend.position =</span> <span class="st">"top"</span>)</span>
+<span id="cb57-30"><a href="#cb57-30" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb57-31"><a href="#cb57-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-32"><a href="#cb57-32" aria-hidden="true" tabindex="-1"></a>p5a <span class="ot">&lt;-</span> <span class="fu">plot_stress_effect</span>(df_f5_classified, <span class="st">"aridity"</span>, <span class="st">"Stress level of aridity (%)"</span>)</span>
+<span id="cb57-33"><a href="#cb57-33" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"output/Fig5a.pdf"</span>, p5a, <span class="at">width =</span> <span class="dv">6</span>, <span class="at">height =</span> <span class="dv">6</span>, <span class="at">device =</span> <span class="st">"pdf"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>p5b <span class="ot">&lt;-</span> <span class="fu">plot_stress_effect</span>(df_f5_classified, <span class="st">"warming"</span>, <span class="st">"Stress level of warming (%)"</span>)</span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"output/Fig5b.pdf"</span>, p5b, <span class="at">width =</span> <span class="dv">6</span>, <span class="at">height =</span> <span class="dv">6</span>, <span class="at">device =</span> <span class="st">"pdf"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+</div>
+</section>
+<section id="table-1" class="level1">
+<h1>###Table 1</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to fit a linear model and extract coefficient for the single stressor (i.e., effect size of aridity/warming) under high nMS, low nMS, and general environments</span></span>
+<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a>get_lm_result <span class="ot">&lt;-</span> <span class="cf">function</span>(data, stressor, label) {</span>
+<span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a>  data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb61-4"><a href="#cb61-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">all_of</span>(stressor), <span class="sc">~</span> . <span class="sc">/</span> <span class="dv">100</span>))</span>
+<span id="cb61-5"><a href="#cb61-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb61-6"><a href="#cb61-6" aria-hidden="true" tabindex="-1"></a>  formula <span class="ot">&lt;-</span> <span class="fu">reformulate</span>(stressor, <span class="at">response =</span> <span class="st">"weighted_emf"</span>)</span>
+<span id="cb61-7"><a href="#cb61-7" aria-hidden="true" tabindex="-1"></a>  model <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">formula =</span> formula, <span class="at">data =</span> data)</span>
+<span id="cb61-8"><a href="#cb61-8" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb61-9"><a href="#cb61-9" aria-hidden="true" tabindex="-1"></a>  result <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">summary</span>(model)<span class="sc">$</span>coefficients)</span>
+<span id="cb61-10"><a href="#cb61-10" aria-hidden="true" tabindex="-1"></a>  result <span class="ot">&lt;-</span> result[<span class="fu">rownames</span>(result) <span class="sc">==</span> stressor, , drop <span class="ot">=</span> <span class="cn">FALSE</span>]</span>
+<span id="cb61-11"><a href="#cb61-11" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb61-12"><a href="#cb61-12" aria-hidden="true" tabindex="-1"></a>  result<span class="sc">$</span>lm <span class="ot">&lt;-</span> label</span>
+<span id="cb61-13"><a href="#cb61-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(result)</span>
+<span id="cb61-14"><a href="#cb61-14" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb61-15"><a href="#cb61-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb61-16"><a href="#cb61-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Analyze single climatic stressor (i.e., aridity and warming) effect across general, high nMS, and low nMS environment for a specific depth</span></span>
+<span id="cb61-17"><a href="#cb61-17" aria-hidden="true" tabindex="-1"></a>analyze_stressor <span class="ot">&lt;-</span> <span class="cf">function</span>(df, depth, stressor, ms_type_label) {</span>
+<span id="cb61-18"><a href="#cb61-18" aria-hidden="true" tabindex="-1"></a>  df_depth <span class="ot">&lt;-</span> df[df<span class="sc">$</span>depth <span class="sc">==</span> depth, ]</span>
+<span id="cb61-19"><a href="#cb61-19" aria-hidden="true" tabindex="-1"></a>  results <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
+<span id="cb61-20"><a href="#cb61-20" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb61-21"><a href="#cb61-21" aria-hidden="true" tabindex="-1"></a>  <span class="co"># General environment</span></span>
+<span id="cb61-22"><a href="#cb61-22" aria-hidden="true" tabindex="-1"></a>  label_all <span class="ot">&lt;-</span> <span class="fu">paste</span>(stressor, <span class="st">"under General environment"</span>)</span>
+<span id="cb61-23"><a href="#cb61-23" aria-hidden="true" tabindex="-1"></a>  results[[<span class="st">"ALL"</span>]] <span class="ot">&lt;-</span> <span class="fu">get_lm_result</span>(df_depth[df_depth<span class="sc">$</span>type <span class="sc">==</span> <span class="st">"General environment (all sites)"</span>, ], stressor, label_all)</span>
+<span id="cb61-24"><a href="#cb61-24" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb61-25"><a href="#cb61-25" aria-hidden="true" tabindex="-1"></a>  <span class="co"># High nMS environment</span></span>
+<span id="cb61-26"><a href="#cb61-26" aria-hidden="true" tabindex="-1"></a>  label_high <span class="ot">&lt;-</span> <span class="fu">paste</span>(stressor, <span class="st">"under High"</span>, ms_type_label)</span>
+<span id="cb61-27"><a href="#cb61-27" aria-hidden="true" tabindex="-1"></a>  results[[<span class="st">"HIGH"</span>]] <span class="ot">&lt;-</span> <span class="fu">get_lm_result</span>(df_depth[df_depth<span class="sc">$</span>type <span class="sc">==</span> <span class="st">"High nMS environment"</span>, ], stressor, label_high)</span>
+<span id="cb61-28"><a href="#cb61-28" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb61-29"><a href="#cb61-29" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Low nMS environment</span></span>
+<span id="cb61-30"><a href="#cb61-30" aria-hidden="true" tabindex="-1"></a>  label_low <span class="ot">&lt;-</span> <span class="fu">paste</span>(stressor, <span class="st">"under Low"</span>, ms_type_label)</span>
+<span id="cb61-31"><a href="#cb61-31" aria-hidden="true" tabindex="-1"></a>  results[[<span class="st">"LOW"</span>]] <span class="ot">&lt;-</span> <span class="fu">get_lm_result</span>(df_depth[df_depth<span class="sc">$</span>type <span class="sc">==</span> <span class="st">"Low nMS environment"</span>, ], stressor, label_low)</span>
+<span id="cb61-32"><a href="#cb61-32" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb61-33"><a href="#cb61-33" aria-hidden="true" tabindex="-1"></a>  combined <span class="ot">&lt;-</span> <span class="fu">do.call</span>(rbind, results)</span>
+<span id="cb61-34"><a href="#cb61-34" aria-hidden="true" tabindex="-1"></a>  combined<span class="sc">$</span>depth <span class="ot">&lt;-</span> depth</span>
+<span id="cb61-35"><a href="#cb61-35" aria-hidden="true" tabindex="-1"></a>  combined<span class="sc">$</span>stressor <span class="ot">&lt;-</span> stressor</span>
+<span id="cb61-36"><a href="#cb61-36" aria-hidden="true" tabindex="-1"></a>  combined<span class="sc">$</span>nms_level <span class="ot">&lt;-</span> ms_type_label</span>
+<span id="cb61-37"><a href="#cb61-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(combined)</span>
+<span id="cb61-38"><a href="#cb61-38" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb61-39"><a href="#cb61-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb61-40"><a href="#cb61-40" aria-hidden="true" tabindex="-1"></a><span class="co"># Main function to iterate over all combinations of stressors × depths × MS thresholds</span></span>
+<span id="cb61-41"><a href="#cb61-41" aria-hidden="true" tabindex="-1"></a>run_all_models <span class="ot">&lt;-</span> <span class="cf">function</span>(df, <span class="at">stressors =</span> <span class="fu">c</span>(<span class="st">"aridity"</span>, <span class="st">"warming"</span>), <span class="at">depths =</span> <span class="fu">unique</span>(df<span class="sc">$</span>depth), <span class="at">ms_levels =</span> <span class="fu">c</span>(<span class="st">"MS&gt;25%"</span>, <span class="st">"MS&gt;50%"</span>, <span class="st">"MS&gt;75%"</span>)) {</span>
+<span id="cb61-42"><a href="#cb61-42" aria-hidden="true" tabindex="-1"></a>  all_results <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
+<span id="cb61-43"><a href="#cb61-43" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb61-44"><a href="#cb61-44" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (stressor <span class="cf">in</span> stressors) {</span>
+<span id="cb61-45"><a href="#cb61-45" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (ms_label <span class="cf">in</span> ms_levels) {</span>
+<span id="cb61-46"><a href="#cb61-46" aria-hidden="true" tabindex="-1"></a>      df_sub <span class="ot">&lt;-</span> df[df<span class="sc">$</span>threshold <span class="sc">==</span> ms_label, ]</span>
+<span id="cb61-47"><a href="#cb61-47" aria-hidden="true" tabindex="-1"></a>      <span class="cf">for</span> (d <span class="cf">in</span> depths) {</span>
+<span id="cb61-48"><a href="#cb61-48" aria-hidden="true" tabindex="-1"></a>        res <span class="ot">&lt;-</span> <span class="fu">analyze_stressor</span>(df_sub, d, stressor, ms_label)</span>
+<span id="cb61-49"><a href="#cb61-49" aria-hidden="true" tabindex="-1"></a>        all_results[[<span class="fu">paste</span>(stressor, ms_label, d, <span class="at">sep =</span> <span class="st">"_"</span>)]] <span class="ot">&lt;-</span> res</span>
+<span id="cb61-50"><a href="#cb61-50" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb61-51"><a href="#cb61-51" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb61-52"><a href="#cb61-52" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb61-53"><a href="#cb61-53" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb61-54"><a href="#cb61-54" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">do.call</span>(rbind, all_results))</span>
+<span id="cb61-55"><a href="#cb61-55" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb61-56"><a href="#cb61-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb61-57"><a href="#cb61-57" aria-hidden="true" tabindex="-1"></a>final_results_f5 <span class="ot">&lt;-</span> <span class="fu">run_all_models</span>(df_f5_classified)</span>
+<span id="cb61-58"><a href="#cb61-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb61-59"><a href="#cb61-59" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(final_results_f5, <span class="st">"output/Table1_effect_size_result.csv"</span>, <span class="at">row.names =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
