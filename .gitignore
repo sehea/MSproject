@@ -3,6 +3,4 @@
 .RData
 .Ruserdata
 .Rapp.history
-*.log
-*.aux
-*.out
+

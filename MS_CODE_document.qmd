@@ -1,13 +1,9 @@
 ---
 title: "MS_CODE_document"
 author: "Shuhai Wen"
-format: pdf
+format: html
 editor: visual
 ---
-
-## Quarto
-
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
 
 ## Running Code
 
@@ -133,9 +129,11 @@ save_plot_pdf <- function(plot_obj, filename, width = 7, height = 5) {
 colors <- c("#808080", "#FF6600", "#61A0D7")
 
 p1b <- plot_boxplot(df_f1, "depth", "ms_intensity", colors, y_axis_label = "Intensity of mutiple stress")
+p1b
 save_plot_pdf(p1b, "Fig1b.pdf")
 
 p1c <- plot_boxplot(df_f1, "depth", "weighted_emf", colors, y_axis_label = "Soil multifunctionality")
+p1c
 save_plot_pdf(p1c, "Fig1c.pdf")
 
 # Statistic test
@@ -173,7 +171,7 @@ p1d <- ggplot(data = df_f1, aes(x = ms_intensity, y = weighted_emf, group = dept
   theme(panel.grid = element_blank(),legend.title = element_blank(),legend.position = "top",legend.text = element_text(size = 14),
     axis.text = element_text(size = 14, color = "black"),axis.title = element_text(size = 16)) +
   geom_text(data = lm_summary,aes(x = x_pos, y = y_pos, label = label),inherit.aes = FALSE,size = 5,color = "black")
-
+p1d
 ggsave("output/Fig1d.pdf", p1d, width = 6, height = 6, device = "pdf")
 
 # Fig 1e bar plot
@@ -195,7 +193,7 @@ p1e <- ggplot(df_f1e, aes(x = threshold, y = frequency, fill = depth)) +
     legend.title = element_text(size = 16),
     legend.text = element_text(size = 14)
   )
-
+p1e
 ggsave("output/Fig1e.pdf", p1e, width = 7, height = 5)
 ```
 
@@ -264,7 +262,7 @@ p2<-ggplot(sankey_data, aes(axis1 = Source, axis2 = Target, y = Value)) +
   scale_fill_manual(values = custom_colors) +
   theme_void() +
   theme(legend.position = "none")
-
+p2
 ggsave("output/Fig2.pdf", p2, width = 5, height = 6, device = "pdf")
 # The importance of each stressor group is calculated by summing its corresponding stress factors in rimp_result
 ```
@@ -275,7 +273,7 @@ ggsave("output/Fig2.pdf", p2, width = 5, height = 6, device = "pdf")
 # Combine data from all soil layers
 all_df <- bind_rows(lapply(c("A_Topsoil", "B_Subsoil", "C_Deepsoil"), function(layer) DATAFRAMES[[layer]]$DF))
 
-# Convert threshold indicators to long format
+# Convert threshold indicators to long format(df_f3:dataframe for fig.3)
 df_f3 <- melt(
   all_df,
   id.vars = c("sample_id", "weighted_emf", "depth"),
@@ -308,14 +306,14 @@ p3<-ggplot(df_f3, aes(x = nMS, y = weighted_emf, color = threshold)) +
   theme_bw() +
   theme(legend.position = "top",legend.text = element_text(size = 14), axis.text = element_text(size = 14, color = "black"),
     axis.title = element_text(size = 16),strip.text = element_text(size = 14),panel.grid = element_blank())
- 
+p3 
 ggsave("output/Fig3.pdf", p3, width = 6, height = 6, device = "pdf")
 ```
 
 # ###Figure 4
 
 ```{r}
-df_f4 <- read.csv("data/EMF&MS_heatmap_v21.csv")
+df_f4 <- read.csv("data/EMF&MS_heatmap_v21.csv")#(df_f4:dataframe for fig.4)
 layers <- c("A_Topsoil", "B_Subsoil", "C_Deepsoil")
 ms_vars <- 6:21
 emf_vars <- c(3:5, 28:35)
@@ -347,6 +345,7 @@ p4<-Heatmap(res_mat, col = col_fun, cluster_rows = FALSE, cluster_columns = FALS
         cell_fun = function(j, i, x, y, w, h, fill) {
           grid.text(pval_star[i, j], x, y, gp = gpar(fontsize = 10))
         })
+p4
 pdf("output/Fig4.pdf", width = 9, height = 6)
 draw(p4)
 dev.off()
@@ -387,9 +386,11 @@ plot_stress_effect <- function(df_f5, stress_var, stress_label) {
 }
 
 p5a <- plot_stress_effect(df_f5_classified, "aridity", "Stress level of aridity (%)")
+p5a
 ggsave("output/Fig5a.pdf", p5a, width = 6, height = 6, device = "pdf")
 
 p5b <- plot_stress_effect(df_f5_classified, "warming", "Stress level of warming (%)")
+p5b
 ggsave("output/Fig5b.pdf", p5b, width = 6, height = 6, device = "pdf")
 ```
 
@@ -452,7 +453,7 @@ run_all_models <- function(df, stressors = c("aridity", "warming"), depths = uni
   return(do.call(rbind, all_results))
 }
 
-final_results_f5 <- run_all_models(df_f5_classified)
+effectsize_results_t1 <- run_all_models(df_f5_classified)
 
-write.csv(final_results_f5, "output/Table1_effect_size_result.csv", row.names = T)
+write.csv(effectsize_results_t1, "output/Table1_effect_size_result.csv", row.names = T)
 ```
